@@ -1,0 +1,59 @@
+@font-face {
+  font-family: aktiv-grotesk;
+  src: 
+    url(https://use.typekit.net/af/ab3e12/000000000000000077359d4f/30/l?subset_id=2&fvd=n4&v=3) format("woff2"),
+    url(https://use.typekit.net/af/ab3e12/000000000000000077359d4f/30/d?subset_id=2&fvd=n4&v=3) format("woff"),
+    url(https://use.typekit.net/af/ab3e12/000000000000000077359d4f/30/a?subset_id=2&fvd=n4&v=3) format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-stretch: normal;
+  font-display: auto;
+}
+
+@font-face {
+  font-family: aktiv-grotesk;
+  src: 
+    url(https://use.typekit.net/af/c11a71/000000000000000077359d5e/30/l?subset_id=2&fvd=n5&v=3) format("woff2"),
+    url(https://use.typekit.net/af/c11a71/000000000000000077359d5e/30/d?subset_id=2&fvd=n5&v=3) format("woff"),
+    url(https://use.typekit.net/af/c11a71/000000000000000077359d5e/30/a?subset_id=2&fvd=n5&v=3) format("opentype");
+  font-weight: 500;
+  font-style: normal;
+  font-stretch: normal;
+  font-display: auto;
+}
+
+@font-face {
+  font-family: aktiv-grotesk;
+  src: 
+    url(https://use.typekit.net/af/a798a9/000000000000000077359d55/30/l?subset_id=2&fvd=n7&v=3) format("woff2"),
+    url(https://use.typekit.net/af/a798a9/000000000000000077359d55/30/d?subset_id=2&fvd=n7&v=3) format("woff"),
+    url(https://use.typekit.net/af/a798a9/000000000000000077359d55/30/a?subset_id=2&fvd=n7&v=3) format("opentype");
+  font-weight: 700;
+  font-style: normal;
+  font-stretch: normal;
+  font-display: auto;
+}
+
+@font-face {
+  font-family: aktiv-grotesk;
+  src: 
+    url(https://use.typekit.net/af/951aca/000000000000000077359d51/30/l?subset_id=2&fvd=i4&v=3) format("woff2"),
+    url(https://use.typekit.net/af/951aca/000000000000000077359d51/30/d?subset_id=2&fvd=i4&v=3) format("woff"),
+    url(https://use.typekit.net/af/951aca/000000000000000077359d51/30/a?subset_id=2&fvd=i4&v=3) format("opentype");
+  font-weight: 400;
+  font-style: italic;
+  font-stretch: normal;
+  font-display: auto;
+}
+
+@font-face {
+  font-family: aktiv-grotesk;
+  src: 
+    url(https://use.typekit.net/af/8e3d9f/000000000000000077359d58/30/l?subset_id=2&fvd=i7&v=3) format("woff2"),
+    url(https://use.typekit.net/af/8e3d9f/000000000000000077359d58/30/d?subset_id=2&fvd=i7&v=3) format("woff"),
+    url(https://use.typekit.net/af/8e3d9f/000000000000000077359d58/30/a?subset_id=2&fvd=i7&v=3) format("opentype");
+  font-weight: 700;
+  font-style: italic;
+  font-stretch: normal;
+  font-display: auto;
+}

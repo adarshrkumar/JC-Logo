@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap');
+
+:root {
+  --main-color: #F9BC83;
+  --main-bg-color: white;
+  font-family: 'Luckiest Guy', cursive;
+  background-color: var(--main-bg-color);
+  color: var(--main-color);
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  margin: 0;
+  display: grid;
+  place-items: center;
+  background-color: var(--main-bg-color);
+}
+
+.logo {
+  --o-height: 99pt;
+  --100-w: 100%;
+  --100-h: var(--o-height);
+  /* --100-h: 100vh; */
+
+  position: relative;
+
+  width: var(--100-w);
+  height: var(--100-h);
+
+  display: flex;
+  justify-content: space-between;
+
+  isolation: isolate;
+  cursor: pointer;
+
+
+  &:hover .image {
+    background-image: url('CreativityInABottle_LightOn.svg')
+  }
+
+  .part {
+    max-height: var(--100-h);
+    line-height: 100%;
+  }
+
+  .image {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: var(--l-gap);
+
+    height: var(--100-h);
+    max-width: 50%;
+    /* aspect-ratio: 1; */
+
+    display: grid;
+    place-items: center;
+    font-size: 99pt;
+
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    & img {
+      height: var(--100-h);
+      max-width: 100%;
+    }
+  }
+
+  .text {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: var(--l-gap);
+
+    max-width: 50%;
+
+    display: grid;
+    place-items: center;
+    font-size: calc(var(--o-height)/1.5);
+  }
+}

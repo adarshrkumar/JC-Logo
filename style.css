@@ -1,0 +1,767 @@
+@import url("/fonts.css");
+
+:root {
+  --main-color: #F9BC83;
+  --main-bg-color: white;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  margin: 0;
+  display: grid;
+  place-items: center;
+  background-color: var(--main-bg-color);
+}
+
+.logo {
+  --100-w-percent: 260px;
+  --100-h-percent: 400px;
+  --stroke-size: calc(var(--100-h-percent)/10);
+  --text-shadow: 0px 0px 12.5px var(--main-color);
+
+  position: relative;
+  
+  display: flex;
+  flex-direction: row;
+  gap: var(--stroke-size);
+
+  font-family: aktiv-grotesk;
+  color: var(--main-color);
+}
+
+.logo .word {
+  display: flex;
+  flex-direction: row;
+  gap: calc(var(--stroke-size)/1.5);
+}
+
+.logo .word .letter {
+  position: relative;
+  --border-radius: calc(calc(var(--100-h-percent)/16)*5);
+
+  height: var(--100-h-percent);
+  width: var(--100-w-percent);
+  isolation: isolate;
+}
+
+.logo .word .letter * {
+  display: inline-block;
+  background-color: var(--main-color);
+
+}
+
+.hasHead .logo .letter .head {
+  --animation-time: 2s;
+
+  background: url('head.png');
+  background-position-x: center;
+  background-position-y: bottom;
+  background-repeat: no-repeat;
+  background-size: contain;
+
+  animation-duration: var(--animation-time);
+}
+
+.hasHead .logo .word .letter.J .head-block {
+  --width: calc(var(--100-w-percent) - calc(var(--stroke-size)*1.5));
+
+  position: absolute;
+  top: var(--stroke-size);
+  right: 0;
+
+  width: var(--width);
+  height: var(--width);
+
+  background-color: var(--main-bg-color)
+}
+
+.hasHead .logo .word .letter.J .head {
+  bottom: 100%;
+
+  height: var(--width);
+  animation-name: jHeadAni;
+}
+
+.logo .word .letter.J .line.h, 
+.hasHead .logo .word .letter.J .head {
+  --width: calc(var(--100-w-percent) - calc(var(--stroke-size)*1.5));
+  
+  position: absolute;
+  right: 0;
+  width: var(--width);
+}
+
+.logo .word .letter.J .line.h {
+  height: var(--stroke-size);
+}
+
+.logo .word .letter.J .line.v {
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: calc(calc(var(--100-h-percent)/2) + 1px);
+  width: var(--stroke-size);
+}
+
+.logo .word .letter.J .circle.outer {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  height: calc(var(--100-h-percent)/2);
+  width: var(--100-w-percent);
+  border-radius: 0 0 var(--border-radius) var(--border-radius);
+
+  isolation: isolate;
+}
+
+.logo .word .letter.J .circle.outer .circle.inner {
+  
+  position: absolute;
+  left: var(--stroke-size);
+  right: var(--stroke-size);
+  top: 0;
+  height: calc(calc(var(--100-h-percent)/2) - var(--stroke-size));
+  width: calc(var(--100-w-percent) - calc(var(--stroke-size)*2));
+  background-color: var(--main-bg-color);
+  border-radius: 0 0 var(--border-radius) var(--border-radius);
+}
+
+.logo .word .letter.C .circle.outer {
+  --b-rad: 150px;
+  position: absolute;
+  inset: 0;
+  width: var(--100-w-percent);
+  height: var(--100-h-percent);
+  border-radius: var(--b-rad);
+
+  isolation: isolate;
+}
+
+.logo .word .letter.C .circle.inner {
+  position: absolute;
+  inset: var(--stroke-size);
+  
+  width: calc(var(--100-w-percent) - calc(var(--stroke-size)*2));
+  height: calc(var(--100-h-percent) - calc(var(--stroke-size)*2));
+
+  background-color: var(--main-bg-color);
+  border-radius: var(--b-rad);
+}
+
+.hasHead .logo .word .letter.C .circle.inner {
+  overflow-x: hidden;
+}
+
+.logo .word .letter.C .circle .rect {
+  --m-p: calc(var(--stroke-size)*2);
+  position: absolute;
+  top: var(--m-p);
+  bottom: var(--m-p);
+  right: 0;
+  
+  width: var(--m-p);
+  height: calc(var(--100-h-percent) - calc(var(--m-p)*2));
+
+  background-color: var(--main-bg-color);
+
+  z-index: -1;
+}
+
+.hasHead .logo .word .letter.C .head {
+  --width: calc(var(--100-w-percent) - calc(var(--stroke-size)*1.5));
+  --head-position: calc(50% - var(--width)/2);
+
+  position: absolute;
+  top: var(--head-position);
+  bottom: var(--head-position);
+  left: 0;
+
+  rotate: 0.25turn;
+
+  width: var(--width);
+  height: var(--width);
+
+  animation-name: cHeadAni;
+}
+
+.logo .word .letter.a .circle.outer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  
+  height: var(--100-w-percent);
+  width: var(--100-w-percent);
+
+  border-radius: var(--border-radius);
+}
+
+.logo .word .letter.a .circle.outer .circle.inner {
+  position: absolute;
+  bottom: var(--stroke-size);
+  left: var(--stroke-size);
+  right: var(--stroke-size);
+  
+  height: calc(var(--100-w-percent) - calc(var(--stroke-size)*2));
+  width: calc(var(--100-w-percent) - calc(var(--stroke-size)*2));
+
+  border-radius: var(--border-radius);
+
+  background-color: var(--main-bg-color);
+}
+
+.logo .word .letter.a .line.outer {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+
+  height: calc(var(--100-w-percent)/2);
+  width: var(--stroke-size);
+}
+
+.logo .word .letter.v .container {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  width: var(--100-w-percent);
+  height: var(--100-w-percent);
+  overflow: hidden;
+
+  background-color: var(--main-bg-color);
+}
+
+.logo .word .letter.v .container .overcorrect, 
+.logo .word .letter.v .container .line {
+  --l-r-value: calc(calc(var(--100-w-percent)/400)*96);
+  --angle: 30deg;
+  --b-s-value: calc(var(--100-w-percent)/8);
+  
+  position: absolute;
+  top: 0;
+  bottom: 0;
+
+  width: var(--stroke-size);
+  height: var(--100-w-percent);
+}
+
+.logo .word .letter.v .container .overcorrect {
+  left: var(--l-r-value);
+  rotate: calc(var(--angle) - var(--angle) - var(--angle));
+  box-shadow: white calc(var(--b-s-value) - var(--b-s-value) - var(--b-s-value)) 0px;
+  z-index: 1;
+
+  background-color: transparent;
+}
+
+.logo .word .letter.v .container .line.one {
+  left: var(--l-r-value);
+  rotate: calc(var(--angle) - var(--angle) - var(--angle));
+  box-shadow: white var(--b-s-value) 0px;
+}
+
+.logo .word .letter.v .container .line.two {
+  right: var(--l-r-value);
+  rotate: var(--angle);
+  box-shadow: white var(--b-s-value) 0px;
+}
+
+.logo .word .letter.r .container {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  width: var(--100-w-percent);
+  height: var(--100-w-percent);
+
+  background-color: var(--main-bg-color);
+
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.logo .word .letter.r .container .line {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: var(--stroke-size);
+
+  height: var(--100-w-percent);
+  width: var(--stroke-size);
+
+  z-index: 1;
+}
+
+.hasHead .logo .word .letter.r .container .head {
+  --height: calc(var(--100-w-percent) - calc(var(--stroke-size)*3));
+  --width: calc(var(--100-w-percent) - var(--stroke-size));
+  --head-position: calc(50% - var(--width)/2);
+
+  position: absolute;
+  top: calc(var(--stroke-size)*2);
+  left: var(--stroke-size);
+
+  rotate: 0.25turn;
+
+  height: var(--height);
+  width: var(--width);
+
+  animation-name: rHeadAni;
+}
+
+.logo .word .letter.r .container .head-block {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  height: var(--100-w-percent);
+  width: var(--stroke-size);
+
+  background-color: var(--main-bg-color);
+
+  z-index: 1;
+}
+
+.logo .word .letter.r .container .circle.outer {
+  position: absolute;
+  top: 0;
+  left: var(--stroke-size);
+  right: var(--stroke-size);
+
+  width: calc(var(--100-w-percent) - calc(var(--stroke-size)*2));
+  height: calc(var(--100-w-percent) - calc(var(--stroke-size)*2));
+}
+
+.logo .word .letter.r .container .circle.outer .round.square {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: calc(var(--stroke-size)*2);
+  height: calc(var(--stroke-size)*2);
+
+  background-color: var(--main-bg-color);
+}
+  
+.logo .word .letter.r .container .circle.outer .round.square .round {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: calc(var(--stroke-size)*2);
+  height: calc(var(--stroke-size)*2);
+
+  background-color: var(--main-color);
+
+  border-radius: var(--border-radius) 0 0 0;
+}
+
+.logo .word .letter.r .container .circle.outer .circle.inner {
+  position: absolute;
+  top: var(--stroke-size);
+  left: calc(var(--stroke-size));
+
+  width: calc(var(--100-w-percent) - var(--stroke-size));
+  height: calc(var(--100-w-percent) - var(--stroke-size));
+
+  background-color: var(--main-bg-color);
+}
+
+.logo .word .letter.r .container .circle.outer .circle.inner .rounded.square {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: calc(var(--stroke-size)*2);
+  height: calc(var(--stroke-size)*2);
+
+  background-color: var(--main-color);
+}
+  
+.logo .word .letter.r .container .circle.outer .circle.inner .rounded.square .rounded {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: calc(var(--stroke-size)*2);
+  height: calc(var(--stroke-size)*2);
+
+  background-color: var(--main-bg-color);
+
+  border-radius: calc(var(--border-radius)/3) 0 0 0;
+}
+
+.logo .word .letter.e .circle.outer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  
+  height: var(--100-w-percent);
+  width: var(--100-w-percent);
+
+  border-radius: var(--border-radius);
+}
+
+.logo .word .letter.e .circle.outer .circle.inner {
+  position: absolute;
+  bottom: var(--stroke-size);
+  left: var(--stroke-size);
+  right: var(--stroke-size);
+  
+  height: calc(var(--100-w-percent) - calc(var(--stroke-size)*2));
+  width: calc(var(--100-w-percent) - calc(var(--stroke-size)*2));
+
+  border-radius: var(--border-radius);
+
+  background-color: var(--main-bg-color);
+}
+
+.logo .word .letter.e .circle.outer .line {
+  position: absolute;
+  top: calc(50% - calc(var(--stroke-size)/2));
+  bottom: calc(50% - calc(var(--stroke-size)/2));
+  left: var(--stroke-size);
+  right: var(--stroke-size);
+  
+  height: var(--stroke-size);
+  width: calc(var(--100-w-percent) - calc(var(--stroke-size)*2));
+}
+
+.logo .word .letter.e .circle.outer .block {
+  position: absolute;
+  top: calc(50% + calc(var(--stroke-size)/2));
+  right: 0;
+  
+  width: calc(calc(var(--100-w-percent)/2) - calc(var(--stroke-size)/2));
+  height: calc(var(--stroke-size)*1);
+
+  background-color: var(--main-bg-color);
+}
+
+.logo .word .letter.t {
+  --base-h-w: calc(calc(var(--100-w-percent) + var(--stroke-size))/3);
+}
+
+.logo .word .letter.t .line.v {
+  position: absolute;
+  top: calc(var(--100-h-percent)/4);
+  left: calc(50% - calc(var(--base-h-w)/2));
+  right: calc(50% - calc(var(--base-h-w)/2));
+
+  height: calc(calc(var(--100-h-percent)/4)*3);
+  width: var(--stroke-size);
+}
+
+.logo .word .letter.t .base.outer {
+  position: absolute;
+  left: calc(50% - calc(var(--base-h-w)/2));
+  right: 0;
+  bottom: 0;
+
+  height: var(--base-h-w);
+  width: var(--base-h-w);
+}
+
+.logo .word .letter.t .base.outer .base.inner {
+  position: absolute;
+  top: 0;
+  right: 0;
+
+  height: calc(var(--base-h-w) - var(--stroke-size));
+  width: calc(var(--base-h-w) - var(--stroke-size));
+
+  background-color: var(--main-bg-color);
+}
+
+.logo .word .letter.t .base.outer .round.square {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+
+  width: var(--stroke-size);
+  height: var(--stroke-size);
+
+  background-color: var(--main-bg-color);
+}
+
+.logo .word .letter.t .base.outer .round.square .round {
+  position: absolute;
+  inset: 0;
+
+  width: var(--stroke-size);
+  height: var(--stroke-size);
+
+  border-radius: 0 0 0 var(--border-radius);
+}
+
+.logo .word .letter.t .base.outer .base.inner .rounded.square {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+
+  width: var(--stroke-size);
+  height: var(--stroke-size);
+}
+
+.logo .word .letter.t .base.outer .base.inner .rounded.square .rounded {
+  position: absolute;
+  inset: 0;
+
+  width: var(--stroke-size);
+  height: var(--stroke-size);
+
+  background-color: var(--main-bg-color);
+
+  border-radius: 0 0 0 calc(var(--border-radius)/5);
+}
+
+.logo .word .letter.t .line.h {
+  position: absolute;
+  top: calc(50% - calc(var(--stroke-size)/2));
+  bottom: calc(50% - calc(var(--stroke-size)/2));
+  left: calc(50% - calc(var(--base-h-w)/2) - calc(var(--100-w-percent)/6));
+
+  width: calc(var(--100-w-percent)/2);
+  height: var(--stroke-size);
+}
+
+.logo .word .letter.s .container {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+  width: var(--100-w-percent);
+  height: var(--100-w-percent);
+
+  background-color: var(--main-bg-color);
+}
+
+.logo .word .letter.s {
+  --circ-w-h: calc(calc(var(--100-w-percent)/2) + calc(var(--stroke-size)/2));
+}
+
+.logo .word .letter.s .container .circle.outer {  
+  position: absolute;
+  left: calc(calc(var(--100-w-percent)/4) - calc(var(--stroke-size)/4));
+  right: calc(calc(var(--100-w-percent)/4) - calc(var(--stroke-size)/4));
+
+  width: var(--circ-w-h);
+  height: var(--circ-w-h);
+
+  border-radius: var(--border-radius);
+}
+
+.logo .word .letter.s .container .circle.one.outer {
+  top: 0;
+}
+
+.logo .word .letter.s .container .circle.two.outer {
+  bottom: 0;
+}
+
+.logo .word .letter.s .container .circle.outer .circle.inner {
+  position: absolute;
+  inset: var(--stroke-size);
+
+  width: calc(var(--circ-w-h) - calc(var(--stroke-size)*2));
+  height: calc(var(--circ-w-h) - calc(var(--stroke-size)*2));
+
+  background-color: var(--main-bg-color);
+
+  border-radius: var(--border-radius);
+}
+
+.logo .word .letter.s .container .circle.outer .rect {
+  position: absolute;
+
+  width: calc(var(--stroke-size)*2);
+  height: calc(var(--circ-w-h) - calc(var(--stroke-size)*2.5));
+
+  background-color: var(--main-bg-color);
+
+}
+
+.logo .word .letter.s .container .circle.one.outer .rect {
+  bottom: var(--stroke-size);
+  right: 0;
+}
+
+.logo .word .letter.s .container .circle.two.outer .rect {
+  top: var(--stroke-size);
+  left: 0;
+}
+
+.logo .word .letter.s .container .line.outer {
+  position: absolute;
+  left: calc(calc(var(--100-w-percent)/4) - calc(var(--stroke-size)/4));
+  right: calc(calc(var(--100-w-percent)/4) - calc(var(--stroke-size)/4));
+  top: calc(50% - calc(var(--stroke-size)/2));
+  bottom: calc(50% - calc(var(--stroke-size)/2));
+
+  height: var(--stroke-size);
+  width: var(--circ-w-h);
+
+  background-color: var(--main-bg-color);
+
+  overflow-y: hidden;
+}
+
+.logo .word .letter.s .container .line.outer .line.inner {
+  position: absolute;
+
+  height: calc(var(--stroke-size)*2);
+  width: calc(calc(var(--circ-w-h)/2) - 0px);
+
+}
+
+.logo .word .letter.s .container .line.outer .line.inner.one {
+  top: calc(var(--stroke-size) - var(--stroke-size) - var(--stroke-size));
+  right: 50%;
+  
+  border-radius: 0 0 0 var(--border-radius);
+}
+
+.logo .word .letter.s .container .line.outer .line.inner.two {
+  bottom: calc(var(--stroke-size) - var(--stroke-size) - var(--stroke-size));
+  left: 50%;
+  
+  border-radius: 0 var(--border-radius) 0 0;
+}
+
+@keyframes jHeadAni {
+  0% {
+    bottom: calc(100% - var(--width));
+  }
+  100% {
+    bottom: 100%;
+  }
+}
+
+@keyframes cHeadAni {
+  0% {
+    left: calc(var(--width) - var(--width) - var(--width));
+  }
+  100% {
+    left: 0;
+  }
+}
+
+@keyframes rHeadAni {
+  0% {
+    left: calc(calc(var(--stroke-size)*2) - var(--height));
+  }
+  100% {
+    left: var(--stroke-size);
+  }
+}
+
+.logo .pi {
+  position: absolute;
+  top: 0;
+  right: 0;
+  
+  width: calc(var(--100-w-percent));
+  height: calc(var(--stroke-size)*2);
+
+  /* isolation: isolate; */
+  z-index: 2;
+}
+
+.logo .pi .line {
+  position: absolute;
+  top: 0;
+  right: 0;
+
+  width: calc(var(--100-w-percent) - calc(var(--stroke-size)*2));
+  height: var(--stroke-size);
+  
+  background-color: var(--main-color);
+}
+
+.logo .pi .round {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+
+  width: calc(var(--stroke-size)*2);
+  aspect-ratio: 1;
+
+  background-color: var(--main-bg-color);
+}
+
+.logo .pi .round .round.inner {
+  position: absolute;
+  inset: 0;
+
+  width: calc(var(--stroke-size)*2);
+  aspect-ratio: 1;
+
+  background-color: var(--main-color);
+
+  border-top-left-radius: 100%;
+}
+
+.logo .pi .round .round.inner .round.inner {
+  position: absolute;
+  translate: var(--stroke-size) var(--stroke-size);
+
+  width: calc(var(--stroke-size));
+  height: calc(var(--stroke-size));
+
+  background-color: var(--main-bg-color);
+
+  border-top-left-radius: 100%;
+}
+
+.logo .pi .v-lines {
+  --c-r: calc(var(--100-h-percent)/40);
+  
+  position: absolute;
+
+  height: 100%;
+  width: 100%;
+}
+
+.logo .pi .v-lines .a {
+  position: absolute;
+  top: var(--stroke-size);
+  left: calc((var(--100-w-percent)/2) + 14px);
+
+  width: var(--stroke-size);
+  height: calc(var(--stroke-size)*2);
+
+  background-color: var(--main-color);
+
+  z-index: 3;
+}
+
+.logo .pi .v-lines .b {
+  --left: calc((var(--100-w-percent)/2) + 14px + var(--stroke-size));
+  
+  position: absolute;
+  top: var(--stroke-size);
+  left: var(--left);
+
+  height: calc(var(--stroke-size)*2);
+  width: calc(var(--100-w-percent) - var(--left) - var(--c-r) - var(--stroke-size));
+
+  background-color: var(--main-bg-color);
+
+  z-index: 3;
+}
+
+.logo .pi .v-lines .c {
+  position: absolute;
+  top: var(--stroke-size);
+  right: var(--c-r);
+
+  height: var(--stroke-size);
+  aspect-ratio: 1;
+
+  background-color: var(--main-color);
+}

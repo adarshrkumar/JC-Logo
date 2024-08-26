@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>JC Logo</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <link rel="icon" href="https://java.rockgamerak.repl.co/logo-rounded.png" />
+  </head>
+  <body>
+    <div class="logo"></div>
+    <style>
+      .colors .color.main-bg {
+        background-color: var(--main-bg-color);
+      }
+      .colors .color.main {
+        background-color: var(--main-color);
+      }
+    </style>
+    <section class="colors" hidden>
+      <div class="color main-bg"></div>
+      <div class="color main"></div>
+    </section>
+    <script>
+      let goToOtherVersion = false
+      if (!!goToOtherVersion) location.href = `version-${goToOtherVersion}.html`
+      let letters = 'JC'
+      let piMode = false//true
+      
+      let hasHead = false//true
+      if (hasHead) document.body.classList.add('hasHead')
+
+      let devMode = false
+    </script>
+    <script src="addLetters.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
